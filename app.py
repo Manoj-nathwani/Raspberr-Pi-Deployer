@@ -14,7 +14,7 @@ def process_setup_file():
         print "----- Fetching {} -----".format(app["description"])
         if "repo" in app:
             clone_repo(app["repo"])
-        if "cron" in app:
+        if "cronjobs" in app:
             add_cronjobs(app["description"], app["cronjobs"])
 
 def clone_repo(repo):
