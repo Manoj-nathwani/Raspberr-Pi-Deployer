@@ -19,7 +19,7 @@ def process_setup_file():
 def clone_repo(repo):
     repo_name = repo.split("/")[-1]
     os.system("rm -rf " + repo_name)
-    os.system("git clone {} ./".format(repo))
+    os.system("git clone {} /".format(repo))
 
 def add_cronjobs(description, cronjobs):
     for cronjob in cronjobs:
