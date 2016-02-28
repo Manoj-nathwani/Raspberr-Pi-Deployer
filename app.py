@@ -2,7 +2,8 @@ import json, os
 from crontab import CronTab
 
 settings = json.load(open("setup.json", "r"))
-cron = CronTab(user=settings["username"])
+username = settings['username']
+cron = CronTab(user=username)
 
 def crontab_init():
     cron.remove_all()
@@ -18,8 +19,9 @@ def process_setup_file():
 
 def clone_repo(repo):
     repo_name = repo.split("/")[-1]
-    os.system("rm -rf " + repo_name)
-    os.system("git clone {} /".format(repo))
+    repo_directory = "/home/{}/{}".format(username, repo_name)
+    os.system("rm -rf " + repo_directory)
+    os.system("git clone {} {}".format(repo, repo_directory))
 
 def add_cronjobs(description, cronjobs):
     for cronjob in cronjobs:
