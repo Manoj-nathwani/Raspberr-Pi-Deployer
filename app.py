@@ -1,11 +1,10 @@
 import json, os
+from crontab import CronTab
 
 settings = json.load(open("setup.json", "r"))
 username = settings["username"]
 
 def crontab_init():
-
-    # clear all crontab
     cron = CronTab(user=username)
     cron.remove_all()
     cron.write()
