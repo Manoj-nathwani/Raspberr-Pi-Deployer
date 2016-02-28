@@ -11,7 +11,7 @@ def crontab_init():
 
 def process_setup_file():
     for app in settings["apps"]:
-        print "----- Fetching {} -----".format(app["description"])
+        print "----- Deploying {} -----".format(app["description"])
         if "repo" in app:
             clone_repo(app["repo"])
         if "cronjobs" in app:

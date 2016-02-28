@@ -17,10 +17,15 @@
     },
     {
       "description": "Morning alarm clock",
+      "repo": "https://github.com/Manoj-nathwani/fitbit-alarm-clock",
       "cronjobs": [
         {
           "schedule": "45 7 * * 1-5",
           "command": "omxplayer /home/pi/Downloads/morning.mp3"
+        },
+        {
+          "schedule": "45 7 * * 1-5",
+          "command": "python fitbit-alarm-clock main.py"
         }
       ]
     }
