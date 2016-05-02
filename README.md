@@ -40,4 +40,10 @@ Firstly set up `setup.json` file with all repositories you want to deploy along 
 
 ```
 
-Then clone this repo onto your raspberry pi and run `python app.py` to deploy all your apps
+SSH onto your Raspberry Pi and run:
+```
+$ sudo apt-get update
+$ sudo apt-get install git
+$ git clone https://github.com/Manoj-nathwani/Raspberry-Pi-Deployer.git
+$ pip install -r Raspberry-Pi-Deployer/requirments.txt
+```
